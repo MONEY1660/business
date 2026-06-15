@@ -1,0 +1,637 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Badminton Sport Shop</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #0c0c0c;
+            --card: #f8f2f2;
+        }
+
+        body {
+            background: #f1f0f0;
+            color: #1a1a1a;
+            font-family: 'Segoe UI', sans-serif;
+        }
+
+
+
+        .navbar-brand {
+            font-weight: 700;
+            color: #fff !important;
+        }
+
+        .nav-link {
+            color: white !important;
+            margin-left: 15px;
+        }
+
+        .hero {
+            height: 100vh;
+            background:
+                linear-gradient(rgba(255,4,4,0.65), rgba(7,92,250,0.75)),
+                url('image2/lin.jpg');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+        }
+
+        .hero h1, .hero p, .hero .lead { color: #fff; }
+        .hero h1 { font-size: 4rem; font-weight: 800; }
+
+        .btn-sport {
+            background: #111;
+            color: #fff;
+            font-weight: bold;
+            padding: 12px 25px;
+            border: none;
+            transition: .3s;
+        }
+        .btn-sport:hover { transform: translateY(-3px); color:#fff; }
+
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #111;
+            margin-bottom: 40px;
+        }
+
+        .subsection-title {
+            font-size: 1.6rem;
+            font-weight: 700;
+            color: #222;
+            margin: 40px 0 20px;
+            padding-left: 14px;
+            border-left: 5px solid #0c0c0c;
+        }
+
+        .feature-card, .product-card, .service-card, .contact-card {
+            background: var(--card);
+            border: none;
+            border-radius: 20px;
+            transition: .3s;
+            height: 100%;
+        }
+
+        .feature-card:hover, .product-card:hover, .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 0 25px rgba(0,229,255,.3);
+        }
+
+        .feature-card h4, .feature-card p,
+        .service-card h5,
+        #about h3, #about h5, #about p,
+        .contact-card h5, .contact-card p {
+            color: #1a1a1a;
+        }
+
+        .icon-box { font-size: 3rem; color: #111; }
+
+        .stats { background: #101010; }
+
+        .counter {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #fff;
+        }
+
+        .stats p { color: #ccc; }
+
+        /* Product image */
+        .product-img {
+            width: 100%;
+            height: 200px;
+            object-fit: contain;
+            border-radius: 12px;
+            background: #f0f0f0;
+            padding: 10px;
+        }
+
+        .product-card .card-body h5 {
+            color: #111;
+            font-weight: 700;
+            font-size: 1rem;
+            margin-bottom: 4px;
+        }
+
+        .product-card .card-body p {
+            color: #555;
+            font-size: 0.85rem;
+            margin-bottom: 6px;
+        }
+
+        .product-card .card-body .price {
+            color: #c0392b;
+            font-weight: 700;
+            font-size: 1.05rem;
+        }
+
+        .product-card { border: 1px solid #ddd !important; }
+
+        .contact-form input, .contact-form textarea {
+            background: #161616;
+            border: 1px solid #333;
+            color: white;
+        }
+
+        footer { background: #050505; padding: 30px 0; }
+        footer h4, footer p { color: #fff; }
+
+        .social a { font-size: 1.5rem; margin-right: 15px; color: white; }
+        .social a:hover { color: #ccc; }
+
+        .placeholder-img {
+            height: 250px;
+            background: #222;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 15px;
+            color: #888;
+        }
+
+        .tab-products .nav-link {
+            color: #333 !important;
+            border-radius: 30px !important;
+            padding: 8px 22px;
+            font-weight: 600;
+            border: 2px solid transparent;
+            margin: 0 5px;
+        }
+
+        .tab-products .nav-link.active {
+            background: #0c0c0c !important;
+            color: white !important;
+            border-color: #0c0c0c;
+        }
+        .form-control {
+    background-color: #1e293b;
+    color: white;
+    border: 1px solid #475569;
+}
+
+.form-control::placeholder {
+    color: #cbd5e1;
+}
+    </style>
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">BADMINTON PRO</a>
+            <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#menu">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="menu">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#home">หน้าแรก</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#about">เกี่ยวกับเรา</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#products">สินค้าและบริการ</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">ติดต่อเรา</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-7">
+                    <h1>ยกระดับเกมของคุณ</h1>
+                    <p class="lead my-4">ร้านจำหน่ายไม้แบดมินตันและอุปกรณ์กีฬาคุณภาพสูง</p>
+                    <a href="#products" class="btn btn-sport me-3">ดูสินค้า</a>
+                    <a href="#contact" class="btn btn-outline-light">ติดต่อเรา</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features -->
+    <section class="py-5" style="background:#fff;">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="card feature-card p-4 text-center">
+                        <div class="icon-box"><i class="bi bi-shield-check"></i></div>
+                        <h4 class="mt-3">สินค้าของแท้</h4>
+                        <p>รับประกันคุณภาพทุกชิ้น</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card feature-card p-4 text-center">
+                        <div class="icon-box"><i class="bi bi-truck"></i></div>
+                        <h4 class="mt-3">จัดส่งรวดเร็ว</h4>
+                        <p>ส่งทั่วประเทศ</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card feature-card p-4 text-center">
+                        <div class="icon-box"><i class="bi bi-star-fill"></i></div>
+                        <h4 class="mt-3">บริการมืออาชีพ</h4>
+                        <p>ให้คำแนะนำโดยผู้เชี่ยวชาญ</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About -->
+    <section id="about" class="py-5">
+        <div class="container">
+            <h2 class="section-title text-center">เกี่ยวกับเรา</h2>
+            <div class="row align-items-center">
+                <div class="col-lg-5">
+                    <div class="placeholder-img"> <img src="image2/viv.jpg" alt="เกี่ยวกับร้าน" class="img-fluid rounded shadow">
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <h3>ร้านอุปกรณ์แบดมินตันครบวงจร</h3>
+                    <p>
+เราเป็นผู้จัดจำหน่ายอุปกรณ์แบดมินตันคุณภาพ ทั้งไม้แบดมินตัน รองเท้า
+ลูกแบด เอ็น และอุปกรณ์เสริมจากแบรนด์ชั้นนำ พร้อมให้คำแนะนำโดยทีมงาน
+ที่มีความรู้และประสบการณ์
+</p>
+                    <div class="row mt-4">
+                        <div class="col-6"><h5>✔ สินค้าคุณภาพ</h5></div>
+                        <div class="col-6"><h5>✔ ทีมงานมืออาชีพ</h5></div>
+                        <div class="col-6"><h5>✔ บริการหลังการขาย</h5></div>
+                        <div class="col-6"><h5>✔ ราคาคุ้มค่า</h5></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products & Services -->
+    <section id="products" class="py-5" style="background:#f9f9f9;">
+        <div class="container">
+            <h2 class="section-title text-center">สินค้าและบริการ</h2>
+
+            <!-- Tab Nav -->
+            <ul class="nav justify-content-center mb-4 tab-products flex-wrap gap-2" id="productTabs">
+                <li class="nav-item">
+                    <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#tab-racket">🏸 ไม้แบดมินตัน</button>
+                </li>
+                <li class="nav-item">
+                    <button class="nav-link" data-bs-toggle="tab" data-bs-target="#tab-shoes">👟 รองเท้า</button>
+                </li>
+                <li class="nav-item">
+                    <button class="nav-link" data-bs-toggle="tab" data-bs-target="#tab-accessories">🎒 กระเป๋าและอุปกรณ์</button>
+                </li>
+            </ul>
+
+            <div class="tab-content">
+
+                <!-- Tab 1: ไม้แบด -->
+                <div class="tab-pane fade show active" id="tab-racket">
+                    <h3 class="subsection-title">🏸 ไม้แบดมินตัน</h3>
+                    <div class="row g-4">
+
+                        <div class="col-md-4 col-sm-6">
+                            <div class="card product-card p-3">
+                                <img src="https://joybadminton.com/cdn/shop/files/Yonex_Astrox_88_D_Pro_Silver_Black.png?v=1752538957"
+                                     alt="Yonex Astrox 88D Pro" class="product-img">
+                                <div class="card-body">
+                                    <h5>Yonex Astrox 88D Pro</h5>
+                                    <p>ไม้ระดับโปร สำหรับนักตีรับ ทรงพลัง</p>
+                                    <div class="price">฿ 4,990</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-4 col-sm-6">
+                            <div class="card product-card p-3">
+                                <img src="https://badmintondirect.com/cdn/shop/files/NF700PlayMP_1200x1200.webp?v=1726616581"
+                                     alt="Yonex Nanoflare 700" class="product-img">
+                                <div class="card-body">
+                                    <h5>Yonex Nanoflare 700</h5>
+                                    <p>ไม้หัวเบา ตอบสนองไว เหมาะผู้เล่นเร็ว</p>
+                                    <div class="price">฿ 4,590</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-4 col-sm-6">
+                            <div class="card product-card p-3">
+                                <img src="https://prokicksports.com/cdn/shop/files/AXFORCE_80.jpg?v=1721381506"
+                                     alt="Li-Ning Axforce 80" class="product-img">
+                                <div class="card-body">
+                                    <h5>Li-Ning Axforce 80</h5>
+                                    <p>ไม้ออลราวด์ ยืดหยุ่นสูง เหมาะทุกสไตล์</p>
+                                    <div class="price">฿ 3,290</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-4 col-sm-6">
+                            <div class="card product-card p-3">
+                                <img src="https://joybadminton.com/cdn/shop/files/Victor_DriveX_10X_Metallic_DX-10.png?v=1753835017"
+                                     alt="Victor DriveX 10" class="product-img">
+                                <div class="card-body">
+                                    <h5>Victor DriveX 10</h5>
+                                    <p>ไม้สมดุล ทนทาน เหมาะสำหรับมือใหม่-กลาง</p>
+                                    <div class="price">฿ 1,990</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-4 col-sm-6">
+                            <div class="card product-card p-3">
+                                <img src="badmintondirect.com/cdn/shop/products/TKFC-3_1200x1200.jpg"
+                                     alt="Victor Thruster F" class="product-img"
+                                     onerror="this.style.background='#eee';this.src='https://badmintondirect.com/cdn/shop/files/NF700PlayMP_1200x1200.webp?v=1726616581'">
+                                <div class="card-body">
+                                    <h5>Victor Thruster F</h5>
+                                    <p>ไม้โจมตีเร็ว น้ำหนักเบา เหมาะสมบัวหน้า</p>
+                                    <div class="price">฿ 3,890</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-4 col-sm-6">
+                            <div class="card product-card p-3">
+                                <img src="https://joybadminton.com/cdn/shop/files/Yonex_Astrox_88_D_Pro_Silver_Black.png?v=1752538957"
+                                     alt="Apacs Feather Weight" class="product-img">
+                                <div class="card-body">
+                                    <h5>Apacs Feather Weight</h5>
+                                    <p>ไม้น้ำหนักเบาพิเศษ ราคาสุดคุ้ม</p>
+                                    <div class="price">฿ 990</div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- Tab 2: รองเท้า -->
+                <div class="tab-pane fade" id="tab-shoes">
+                    <h3 class="subsection-title">👟 รองเท้าแบดมินตัน</h3>
+                    <div class="row g-4">
+
+                        <div class="col-md-4 col-sm-6">
+                            <div class="card product-card p-3">
+                                <img src="https://badmintondirect.com/cdn/shop/products/NavySaxe_1200x1200.webp?v=1679980635"
+                                     alt="Yonex Power Cushion 65Z3" class="product-img">
+                                <div class="card-body">
+                                    <h5>Yonex Power Cushion 65Z3</h5>
+                                    <p>รองเท้าซับแรงกระแทกสูง ระบายอากาศดี</p>
+                                    <div class="price">฿ 4,290</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-4 col-sm-6">
+                            <div class="card product-card p-3">
+                                <img src="https://badmintondirect.com/cdn/shop/files/SH970Ace-3_1200x1200.jpg?v=1686500771"
+                                     alt="Victor A970 Ace" class="product-img">
+                                <div class="card-body">
+                                    <h5>Victor A970 Ace</h5>
+                                    <p>รองเท้าระดับโปร เบา เกาะสนามเยี่ยม</p>
+                                    <div class="price">฿ 3,890</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-4 col-sm-6">
+                            <div class="card product-card p-3">
+                                <img src="https://badmintondirect.com/cdn/shop/files/a970nitrolite_1200x1200.jpg?v=1740243603"
+                                     alt="Victor A970 Nitrolite" class="product-img">
+                                <div class="card-body">
+                                    <h5>Victor A970 Nitrolite</h5>
+                                    <p>รองเท้าเทคโนโลยีใหม่ รองรับการเคลื่อนไหวทุกทิศ</p>
+                                    <div class="price">฿ 3,490</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-4 col-sm-6">
+                            <div class="card product-card p-3">
+                                <img src="https://badmintondirect.com/cdn/shop/products/NavySaxe_1200x1200.webp?v=1679980635"
+                                     alt="Yonex SHB 65EX" class="product-img">
+                                <div class="card-body">
+                                    <h5>Yonex SHB 65EX</h5>
+                                    <p>รองเท้าสำหรับผู้เริ่มต้น-กลาง ราคาคุ้มค่า</p>
+                                    <div class="price">฿ 1,890</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-4 col-sm-6">
+                            <div class="card product-card p-3">
+                                <img src="https://badmintondirect.com/cdn/shop/files/SH970Ace-3_1200x1200.jpg?v=1686500771"
+                                     alt="Li-Ning Ranger TD" class="product-img">
+                                <div class="card-body">
+                                    <h5>Li-Ning Ranger TD</h5>
+                                    <p>รองเท้าออลราวด์ ทนทาน สวมใส่สบาย</p>
+                                    <div class="price">฿ 2,590</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-4 col-sm-6">
+                            <div class="card product-card p-3">
+                                <img src="https://badmintondirect.com/cdn/shop/files/a970nitrolite_1200x1200.jpg?v=1740243603"
+                                     alt="Felet Ultra Speed" class="product-img">
+                                <div class="card-body">
+                                    <h5>Felet Ultra Speed</h5>
+                                    <p>รองเท้าน้ำหนักเบา เหมาะผู้เล่นที่ต้องการความเร็ว</p>
+                                    <div class="price">฿ 1,490</div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- Tab 3: กระเป๋าและอุปกรณ์ -->
+                <div class="tab-pane fade" id="tab-accessories">
+                    <h3 class="subsection-title">🎒 กระเป๋าและอุปกรณ์</h3>
+                    <div class="row g-4">
+
+                        <!-- กระเป๋า -->
+                        <div class="col-md-4 col-sm-6">
+                            <div class="card product-card p-3">
+                                <img src="https://badmintondirect.com/cdn/shop/files/Yonex_Bag92229_Scarlett_9_pcs_Bag_1200x1200.webp?v=1699041600"
+                                     alt="Yonex Pro Tournament Bag" class="product-img">
+                                <div class="card-body">
+                                    <h5>Yonex Pro Tournament Bag</h5>
+                                    <p>กระเป๋าใส่ไม้ได้ 9 คัน ช่องแยกรองเท้า</p>
+                                    <div class="price">฿ 3,290</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- เอ็น -->
+                        <div class="col-md-4 col-sm-6">
+                            <div class="card product-card p-3">
+                                <img src="https://oregonbadminton.com/cdn/shop/products/bg80p_bg80_power_1200x1200.png?v=1606416793"
+                                     alt="Yonex BG80 Power" class="product-img">
+                                <div class="card-body">
+                                    <h5>Yonex BG80 Power</h5>
+                                    <p>เอ็นแบดมินตัน ความทนทานสูง พลังดีเยี่ยม</p>
+                                    <div class="price">฿ 190</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- กริป -->
+                        <div class="col-md-4 col-sm-6">
+                            <div class="card product-card p-3">
+                                <img src="https://badmintondirect.com/cdn/shop/products/FullSizeRender_1200x1200.jpg?v=1469820870"
+                                     alt="Yonex Super Grap Overgrip" class="product-img">
+                                <div class="card-body">
+                                    <h5>Yonex Super Grap Overgrip</h5>
+                                    <p>กริปพันด้ามไม้ ดูดซับเหงื่อ จับกระชับ</p>
+                                    <div class="price">฿ 59</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- เสื้อ -->
+                        <div class="col-md-4 col-sm-6">
+                            <div class="card product-card p-3">
+                                <img src="https://oregonbadminton.com/cdn/shop/products/ym0025ex_33_1200x1200.jpg?v=1606416793"
+                                     alt="Yonex Men's Crew Neck Shirt"
+                                     class="product-img"
+                                     onerror="this.src='https://oregonbadminton.com/cdn/shop/products/APPAREL-YONEX-SOCKS-19141-EX_1200x1200.jpg?v=1651856038'">
+                                <div class="card-body">
+                                    <h5>Yonex Tournament Shirt</h5>
+                                    <p>เสื้อกีฬาระบายอากาศดี แห้งเร็ว เบาสบาย</p>
+                                    <div class="price">฿ 690</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- กางเกง -->
+                        <div class="col-md-4 col-sm-6">
+                            <div class="card product-card p-3">
+                                <img src="https://oregonbadminton.com/cdn/shop/products/ym0004ex_011_1200x1200.jpg?v=1606416793"
+                                     alt="Yonex Men's Team Shorts"
+                                     class="product-img"
+                                     onerror="this.src='https://oregonbadminton.com/cdn/shop/products/APPAREL-YONEX-SOCKS-19141-EX_1200x1200.jpg?v=1651856038'">
+                                <div class="card-body">
+                                    <h5>Yonex Men's Team Shorts</h5>
+                                    <p>กางเกงกีฬาขาสั้น ยืดหยุ่นสูง เคลื่อนไหวคล่อง</p>
+                                    <div class="price">฿ 490</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- ถุงเท้า -->
+                        <div class="col-md-4 col-sm-6">
+                            <div class="card product-card p-3">
+                                <img src="https://oregonbadminton.com/cdn/shop/products/APPAREL-YONEX-SOCKS-19141-EX_1200x1200.jpg?v=1651856038"
+                                     alt="Yonex Sport Socks" class="product-img">
+                                <div class="card-body">
+                                    <h5>Yonex Sport Socks</h5>
+                                    <p>ถุงเท้ากีฬา กันลื่น รองรับฝ่าเท้าได้ดี</p>
+                                    <div class="price">฿ 149</div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+            <div class="text-center mt-4">
+    <a href="#products" class="btn btn-sport btn-lg">
+         ดูสินค้าเพิ่มเติม
+    </a>
+</div><!-- end tab-content -->
+
+            <!-- บริการ -->
+            <h3 class="text-center mt-5 mb-4" style="color:#111;">บริการของเรา</h3>
+            <div class="row g-4">
+                <div class="col-md-3">
+                    <div class="card service-card p-4 text-center">
+                        <i class="bi bi-tools icon-box"></i>
+                        <h5 class="mt-3">ขึ้นเอ็น</h5>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card service-card p-4 text-center">
+                        <i class="bi bi-gear icon-box"></i>
+                        <h5 class="mt-3">ปรับสมดุลไม้</h5>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card service-card p-4 text-center">
+                        <i class="bi bi-person-check icon-box"></i>
+                        <h5 class="mt-3">แนะนำอุปกรณ์</h5>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card service-card p-4 text-center">
+                        <i class="bi bi-wrench icon-box"></i>
+                        <h5 class="mt-3">ซ่อมบำรุง</h5>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="py-5">
+        <div class="container">
+            <h2 class="section-title text-center">ติดต่อเรา</h2>
+            <div class="row g-4">
+                <div class="col-lg-4">
+                    <div class="card contact-card p-4">
+                        <h5><i class="bi bi-geo-alt"></i> ที่อยู่</h5>
+                        <p>999 หมู่ 9 ตำบลเมืองเหนือ อำเภอเมืองศรีสะเกษ จังหวัดศรีสะเกษ 33000</p>
+                        <hr>
+                        <h5><i class="bi bi-telephone"></i> โทรศัพท์</h5>
+                        <p>095-535-9056</p>
+                        <hr>
+                        <h5><i class="bi bi-envelope"></i> อีเมล</h5>
+                        <p>badmintonpro@email.com</p>
+                    </div>
+                </div>
+                <div class="col-lg-8">
+                    <div class="card contact-card p-4">
+                        <form class="contact-form">
+                            <div class="row">
+                                <div class="col-md-6 mb-3">
+                                    <input type="text" class="form-control" placeholder="ชื่อ">
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <input type="email" class="form-control" placeholder="อีเมล">
+                                </div>
+                            </div>
+                            <input type="text" class="form-control mb-3" placeholder="หัวข้อ">
+                            <textarea rows="5" class="form-control mb-3" placeholder="ข้อความ"></textarea>
+                            <button class="btn btn-sport">ส่งข้อความ</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container text-center">
+            <h4>BADMINTON PRO</h4>
+            <div class="social my-3">
+                <a href="#"><i class="bi bi-facebook"></i></a>
+                <a href="#"><i class="bi bi-instagram"></i></a>
+                <a href="#"><i class="bi bi-line"></i></a>
+                <a href="#"><i class="bi bi-tiktok"></i></a>
+            </div>
+            <p class="mb-0">© 2026 Badminton Pro. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
